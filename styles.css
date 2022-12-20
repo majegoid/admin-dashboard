@@ -363,9 +363,7 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
 
-.announcements > h4 {
   font-size: 14px;
 }
 
