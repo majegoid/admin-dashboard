@@ -1,12 +1,23 @@
 /* GLOBAL */
 :root {
-  font-size: 16px;
+  /* NEUTRALS */
+  --neutral: hsla(0, 0%, 100%, 1);
+  --neutral-90: hsla(0, 0%, 90%, 1);
+  --neutral-80: hsla(0, 0%, 80%, 1);
+  --neutral-0: hsla(0, 0%, 0%, 1);
+  /* COLORS */
   --highlight-orange: hsla(42, 87%, 55%, 1);
-  --white: hsla(0, 0%, 100%, 1);
-  --dashboard-background-gray: hsla(214, 32%, 91%, 1);
-  --black: hsla(0, 0%, 0%, 1);
   --primary-blue: hsla(201, 79%, 46%, 1);
-  --gray: hsla(24, 2%, 60%, 1);
+  --primary-blue-hover: hsla(201, 100%, 36%, 1);
+  --dashboard-background-gray: hsla(214, 32%, 91%, 1);
+  /* TEXT COLORS */
+  --text-gray: hsla(24, 2%, 60%, 1);
+  /* SHADOWS */
+  --box-shadow-neutral-0: hsla(0, 0%, 0%, 0.1);
+}
+
+html {
+  font-size: 16px;
 }
 
 /* CSS RESET */
@@ -32,12 +43,12 @@ body {
 
   /* height: 100%; */
 
-  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  box-shadow: 0 0.5rem 0.5rem var(--box-shadow-neutral-0);
+  background-color: var(--neutral);
 }
 
-.black-text {
-  color: black;
+.neutral-0-text {
+  color: var(--neutral-0);
 }
 
 /* GLOBAL */
@@ -51,8 +62,8 @@ body {
 
   padding: 1rem;
 
-  background-color: hsla(216, 100%, 50%, 1);
-  color: white;
+  background-color: var(--primary-blue);
+  color: var(--neutral);
 }
 
 .logo {
@@ -101,7 +112,7 @@ nav > .nav-section > * {
 
 nav > .nav-section > *:hover {
   cursor: pointer;
-  background-color: hsla(216, 100%, 55%, 1);
+  background-color: var(--primary-blue-hover);
 }
 /* END SIDEBAR */
 
@@ -212,13 +223,13 @@ nav > .nav-section > *:hover {
   font-weight: bold;
   font-size: 14px;
   background-color: var(--primary-blue);
-  color: white;
+  color: var(--neutral);
   transition: 0.2s all;
 }
 
 .primary-button:hover {
   cursor: pointer;
-  background-color: hsla(216, 100%, 55%, 1);
+  background-color: var(--primary-blue-hover);
 }
 /* END PROJECT BUTTONS */
 
@@ -240,7 +251,7 @@ nav > .nav-section > *:hover {
   border-radius: 1.5rem;
 
   font-weight: bold;
-  background-color: #ccc;
+  background-color: var(--dashboard-background-gray);
 }
 
 .search-bar:focus {
@@ -253,7 +264,7 @@ nav > .nav-section > *:hover {
   grid-column: 2 / 3;
   padding: 1rem;
 
-  background-color: #ccc;
+  background-color: var(--dashboard-background-gray);
 }
 
 .projects > h4 {
@@ -284,7 +295,7 @@ nav > .nav-section > *:hover {
   gap: 0.5rem;
   position: relative;
 
-  border-left: 0.5rem solid orange;
+  border-left: 0.5rem solid var(--highlight-orange);
 }
 
 .project > h4 {
@@ -298,7 +309,7 @@ nav > .nav-section > *:hover {
   padding: 0;
   margin: 0;
 
-  color: #777;
+  color: var(--text-gray);
 }
 
 .project .buttons {
@@ -319,13 +330,13 @@ nav > .nav-section > *:hover {
   border: 0;
   border-radius: 5px;
 
-  background-color: white;
+  background-color: var(--neutral);
   transition: 0.2s all;
 }
 
 .project button:hover {
   cursor: pointer;
-  background-color: #eee;
+  background-color: var(--neutral-90);
 }
 /* END PROJECTS */
 
@@ -337,8 +348,7 @@ aside {
   gap: 1.5rem;
 
   padding: 1rem;
-
-  background-color: #ccc;
+  background-color: var(--dashboard-background-gray);
 }
 
 /* ANNOUNCEMENTS */
@@ -359,8 +369,12 @@ aside {
   font-size: 14px;
 }
 
+.announcements > p {
+  color: var(--text-gray);
+}
+
 .announcements hr {
-  border: 1px solid #ccc;
+  border: 1px solid var(--neutral-80);
 }
 /* END ANNOUNCEMENTS */
 
@@ -383,9 +397,22 @@ aside {
   align-self: center;
 }
 
+.trending p {
+  color: var(--text-gray);
+}
+
 .trending > h4 {
   font-size: 14px;
 }
+
 /* END TRENDING */
 
 /* END ASIDE */
+
+/* OVERRIDE GLOBALS */
+.trending p.black-text {
+  font-weight: bold;
+  color: var(--neutral-0);
+  margin-bottom: 0.25rem;
+}
+/* END OVERRIDE GLOBALS */
