@@ -1,8 +1,8 @@
-/* MAIN LAYOUT */
+/* GLOBAL */
 body {
   display: grid;
-  grid-template-columns: 300px minmax(700px, 1fr);
-  grid-template-rows: 175px minmax(575px, 1fr);
+  grid-template-columns: 300px minmax(700px, 7fr) minmax(300px, 3fr);
+  grid-template-rows: 175px minmax(285px, 1fr);
 
   min-height: 100vh;
   padding: 0;
@@ -10,7 +10,8 @@ body {
 
   font-family: 'Arial', sans-serif;
 }
-/* END MAIN LAYOUT */
+
+/* GLOBAL */
 
 /* SIDEBAR */
 .sidebar {
@@ -76,6 +77,7 @@ nav > section > *:hover {
 
 /* HEADER */
 .header {
+  grid-column: 2 / 4;
   display: grid;
   grid-template-columns: 5fr 3fr;
   grid-template-rows: repeat(2, 50%);
@@ -215,15 +217,9 @@ nav > section > *:hover {
 }
 /* END HEADER */
 
-/* MAIN CONTENT */
-.main-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-
-  background-color: lime;
-}
-
+/* PROJECTS */
 .projects {
+  grid-column: 2 / 3;
   padding: 1rem;
 
   background-color: #ccc;
@@ -318,4 +314,25 @@ nav > section > *:hover {
   cursor: pointer;
   background-color: #eee;
 }
-/* END MAIN CONTENT */
+/* END PROJECTS */
+
+/* ASIDE */
+
+aside {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+/* ANNOUNCEMENTS */
+.announcements {
+  background-color: yellow;
+}
+/* END ANNOUNCEMENTS */
+
+/* TRENDING */
+.trending {
+  background-color: magenta;
+}
+/* END TRENDING */
+
+/* END ASIDE */
