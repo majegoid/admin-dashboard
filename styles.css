@@ -1,4 +1,4 @@
-/* GLOBAL */
+/* GLOBALS */
 :root {
   /* NEUTRALS */
   --neutral: hsla(0, 0%, 100%, 1);
@@ -51,7 +51,28 @@ body {
   color: var(--neutral-0);
 }
 
-/* GLOBAL */
+/* BUTTONS */
+.button-white {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 5px;
+
+  background-color: var(--neutral);
+  transition: 0.2s all;
+}
+
+.button-white:hover {
+  cursor: pointer;
+  background-color: var(--neutral-90);
+}
+/* END BUTTONS */
+
+/* END GLOBALS */
 
 /* SIDEBAR */
 .sidebar {
@@ -320,24 +341,6 @@ nav > .nav-section > *:hover {
   gap: 0.5rem;
 }
 
-.project button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 32px;
-  height: 32px;
-  border: 0;
-  border-radius: 5px;
-
-  background-color: var(--neutral);
-  transition: 0.2s all;
-}
-
-.project button:hover {
-  cursor: pointer;
-  background-color: var(--neutral-90);
-}
 /* END PROJECTS */
 
 /* ASIDE */
